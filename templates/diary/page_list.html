@@ -1,0 +1,20 @@
+<h2>일기 목록 페이지</h2>
+
+{% for object in object_list %}
+<ul>
+    <!-- 하나의 글은 여기서부터 -->
+<li>
+    <a href="{% url 'page_detail' object.id %}">
+        <div class="date">
+            <pre>{{object.dt_created|date:"m"}}월 {{object.dt_created|date:"d"}}일 {{object.dt_created|date:"D"}}</pre>
+        </div>
+        <h2>{{object.title}}</h2>
+        <div class="score">
+            <p>감정점수</p>
+            <span>{{object.score}}점</span>
+        </div>
+    </a>
+</li>
+    <!-- 여기까지 반복됩니다. -->
+</ul>
+{% endfor %}
