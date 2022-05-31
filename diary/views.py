@@ -3,6 +3,10 @@ from .models import Page
 from .forms import PageForm
 
 # Create your views here.
+def index(request):
+    return render(request, "diary/index.html")
+
+
 def page_list(request):
     object_list = Page.objects.all()
     ctx = {"object_list": object_list}
@@ -44,5 +48,11 @@ def page_update(request, page_id):
     return render(request, "diary/page_form.html", ctx)
 
 
-def page_delete(request):
-    pass
+def page_delete(request, page_id):
+    object = Page.objects.get(id=page_id)
+    if request.method == "POST":
+        object.delete()
+        return redirect("page_list")
+    else:
+        ctx = {"object": object}
+        return render(request, "diary/page_confirm_delete.html", ctx)

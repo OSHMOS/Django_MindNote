@@ -1,18 +1,12 @@
 from django.urls import path, include
-from diary.views import (
-    page_list,
-    info,
-    page_create,
-    page_detail,
-    page_update,
-    page_delete,
-)
+from . import views
 
 urlpatterns = [
-    path("", page_list, name="page_list"),
-    path("info/", info, name="info"),
-    path("write/", page_create, name="page_create"),
-    path("page/<int:page_id>/", page_detail, name="page_detail"),
-    path("page/<int:page_id>/update/", page_update, name="page_update"),
-    path("page/<int:page_id>/delete/", page_delete, name="page_delete"),
+    path("", views.index, name="index"),
+    path("diary/", views.page_list, name="page_list"),
+    path("diary/info/", views.info, name="info"),
+    path("diary/write/", views.page_create, name="page_create"),
+    path("diary/page/<int:page_id>/", views.page_detail, name="page_detail"),
+    path("diary/page/<int:page_id>/update/", views.page_update, name="page_update"),
+    path("diary/page/<int:page_id>/delete/", views.page_delete, name="page_delete"),
 ]
