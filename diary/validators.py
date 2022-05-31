@@ -8,7 +8,7 @@ def validate_no_hash(value):
 
 def validate_no_numbers(value):
     for ch in value:
-        if ch.isdigit() == True:
+        if ch.isdigit():
             raise ValidationError("숫자는 포함될 수 없습니다.")
 
 

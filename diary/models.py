@@ -11,5 +11,7 @@ class Page(models.Model):
     score = models.IntegerField(validators=[validate_score])
     dt_created = models.DateField(auto_now_add=True)
 
+    # 수정일도 만들어볼 것!
+
     def __str__(self):
         return self.title
