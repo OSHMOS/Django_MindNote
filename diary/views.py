@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator
 from .models import Page
 from .forms import PageForm
 
@@ -9,7 +10,12 @@ def index(request):
 
 def page_list(request):
     object_list = Page.objects.all()
-    ctx = {"object_list": object_list}
+    paginator = Paginator(object_list, 8)
+    curr_page_num = request.GET.get("page")
+    if curr_page_num == None:
+        curr_page_num = 1
+    page = paginator.page(curr_page_num)
+    ctx = {"page": page}
     return render(request, "diary/page_list.html", ctx)
 
 
