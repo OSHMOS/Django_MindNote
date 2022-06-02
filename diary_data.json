@@ -1,0 +1,35 @@
+[
+{
+  "model": "diary.page",
+  "pk": 56,
+  "fields": {
+    "title": "title_data_01",
+    "content": "content_data_01",
+    "feeling": "feeling_data",
+    "score": 1,
+    "dt_created": "2022-06-02"
+  }
+}
+{
+  "model": "diary.page",
+  "pk": 57,
+  "fields": {
+    "title": "title_data_02",
+    "content": "content_data_02",
+    "feeling": "feeling_data",
+    "score": 2,
+    "dt_created": "2022-06-02"
+  }
+}
+{
+  "model": "diary.page",
+  "pk": 58,
+  "fields": {
+    "title": "title_data_03",
+    "content": "content_data_03",
+    "feeling": "feeling_data",
+    "score": 6,
+    "dt_created": "2022-06-02"
+  }
+}
+]
